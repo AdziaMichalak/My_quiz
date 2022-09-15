@@ -1,0 +1,10 @@
+env
+__pycache__
+.vscode
+.ipynb_checkpoints
+start.sh
+geckodriver.log
+data.db
+.coverage
+.pytest_cache
+.coveragec
