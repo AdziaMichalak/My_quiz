@@ -1,4 +1,3 @@
-import pytest
 from quiz.client import get_me_question
 from pytrivia import Trivia
 

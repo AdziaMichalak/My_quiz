@@ -16,7 +16,7 @@ def index():
 
 
 @app.route("/admin/")
-@login_required
+#@login_required
 def admin_index():
     users = User.query.all()
 
@@ -24,7 +24,7 @@ def admin_index():
 
 
 @app.route("/admin/delete/<username>")
-@login_required
+#@login_required
 def terminator(username):
 
     user = User.query.filter_by(username=username).first()
@@ -36,7 +36,7 @@ def terminator(username):
 
 
 @app.route("/profile/", methods=["GET"])
-@login_required
+#@login_required
 def profile():
     username = current_user.username
     user = User.query.filter_by(username=username).first()
@@ -47,7 +47,7 @@ def profile():
 
 
 @app.route("/trivia/", methods=["GET"])
-@login_required
+#@login_required
 def trivia():
     question = get_me_question()
     session["q"] = question
@@ -55,7 +55,7 @@ def trivia():
 
 
 @app.route("/trivia/check/", methods=["POST"])
-@login_required
+#@login_required
 def correct():
     username = current_user.username
     user = User.query.filter_by(username=username).first()
