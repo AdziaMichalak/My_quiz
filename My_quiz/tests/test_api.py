@@ -9,7 +9,7 @@ def client():
     app = create_app()
     return app.test_client()
 
-@mock.patch("quiz.db_manager.get_all_users", return_value=[User(id=1)])
+@mock.patch("quiz.main.get_all_users", return_value=[User(id=1)])
 def test_api(get_all, client):
     response = client.get("/")
     assert response.status_code == 200
