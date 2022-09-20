@@ -4,14 +4,14 @@ from quiz.client import get_me_question
 from quiz import db
 from quiz.models import User, Score
 from quiz.utilities import check_answers, total_score
+from quiz.db_manager import get_all_users
 
 app = Blueprint("base", __name__)
 
 
 @app.route("/")
 def index():
-    users = User.query.all()
-
+    users = get_all_users()
     return render_template("index.html", users=users)
 
 
